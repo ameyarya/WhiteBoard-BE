@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Editor</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+            src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script crossorigin="anonymous"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="course-editor.style.client.css"
+          rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body style="padding-top: 80px">
+
+<div class="container">
+    <nav class="navbar fixed-top navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">WhiteBoard</a>
+        <button class="navbar-toggler" data-target="#navbarNavDropdown"
+                data-toggle="collapse" type="button">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../course-list/course-list.template.client.html">Course
+                        List
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../profile/profile.template.client.html">
+                        Profile
+                    </a>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">
+                        Home
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container-fluid">
+    <div class="card container-fluid bg-dark text-white">
+        <div class="d-flex d-flex justify-content-between">
+            <div class="p-2">
+                <div class="d-flex flex-row">
+                    <div class="p-0">
+                        <a class="navbar-brand wbdv-course-editor wbdv-close" href="#"
+                           style="color:white">
+                            <i class="fa fa-times fa-lg"></i>
+                        </a>
+                    </div>
+                    <div class="p-0">
+                        <a class="nav-link wbdv-course-title" href="#">
+                            <h5 style="color:white">CS5610</h5>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-2">
+                <div>
+                    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                        <button class="navbar-toggler" data-target="#navbarNavDropdown1"
+                                data-toggle="collapse" type="button">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown1">
+                            <ul class="navbar-nav nav-pills wbdv-page-tab">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Build
+                                    </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">
+                                        Pages
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Themes
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Store
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">
+                                        Apps
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="p-2">
+                <div class="d-flex flex-row">
+                    <div class="p-0">
+                        <a class="nav-link" href="#">
+                            <h5 style="color:white">Settings</h5>
+                        </a>
+                    </div>
+                    <div class="p-0">
+                        <a class="navbar-brand wbdv-new-page-btn" href="#" style="color:white">
+                            <i class="fa fa-plus fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card bg-secondary container-fluid p-3">
+                <ul class="list-group wbdv-module-list">
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 1
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 2
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 3
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 4
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 5
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 6
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 7
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 8
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <li class="list-group-item wbdv-module-item">
+                        <a class="wbdv-module-item-title" href="#">
+                            Module 9
+                        </a>
+                        <button aria-label="Close" class="btn close wbdv-module-item-delete-btn"
+                                data-dismiss="alert"
+                                type="button">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </li>
+                    <br>
+                    <div class="d-flex flex-row justify-content-end">
+                        <button class="btn btn-danger wbdv-module-item-add-btn" type="button">
+                            <i class="fa fa-plus fa-lg"></i>
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="container-fluid p-3">
+                <ul class="nav nav-pills wbdv-topic-pill-list">
+                    <li class="nav-item wbdv-topic-pill">
+                        <a class="nav-link" href="#">
+                            Topic 1
+                        </a>
+                    </li>
+                    <li class="nav-item wbdv-topic-pill">
+                        <a class="nav-link active" href="#">
+                            Topic 2
+                        </a>
+                    </li>
+                    <li class="nav-item wbdv-topic-pill">
+                        <a class="nav-link" href="#">
+                            Topic 3
+                        </a>
+                    </li>
+                    <li class="nav-item wbdv-topic-pill">
+                        <a class="nav-link" href="#">
+                            Topic 4
+                        </a>
+                    </li>
+                    <li class="nav-item wbdv-topic-add-btn">
+                        <a class="nav-link" href="#">
+                            +
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="container-fluid bg-white">
+                <div class="d-flex flex-row justify-content-end">
+                    <div class="p-2">
+                        <button class="btn btn-success" type="button">Save</button>
+                    </div>
+                    <div class="p-2">
+                        <h4>Preview</h4>
+                    </div>
+                    <div class="p-2">
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid bg-white">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-flex flex-row justify-content-end">
+                            <div class="p-2 mr-auto">
+                                <h3>Heading Widget</h3>
+                            </div>
+                            <div class="p-2">
+                                <button class="btn btn-warning" type="button">
+                                    <i class="fa fa-arrow-up"></i>
+                                </button>
+                                <button class="btn btn-warning" type="button">
+                                    <i class="fa fa-arrow-down"></i>
+                                </button>
+                            </div>
+                            <div class="p-2">
+                                <select class="custom-select">
+                                    <option value="">Heading</option>
+                                    <option value="">Heading</option>
+                                    <option value="">Heading</option>
+                                </select>
+                            </div>
+                            <div class="p-2">
+                                <button class="btn btn-danger" type="button">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="d-flex flex-column bd-highlight mb-3">
+                            <div class="p-2 bd-highlight">
+                                <input class="form-control" id="some1" placeholder="Heading Text">
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <select class="custom-select">
+                                    <option value="">Heading</option>
+                                    <option value="">Heading</option>
+                                    <option value="">Heading</option>
+                                </select>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <input class="form-control" id="some2" placeholder="Widget name">
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <h4>Preview</h4>
+                            </div>
+                            <div class="p-2 bd-highlight">
+                                <h3>Heading Text</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="d-flex flex-row justify-content-end">
+                    <button class="btn btn-danger" type="button">
+                        <i class="fa fa-plus-circle"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
